@@ -1,17 +1,17 @@
+
 //___________________
 //Dependencies
 //___________________
-const express = require('express');
-const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
-const app = express ();
+const express = require('express')
+const app = express()
+const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 const db = mongoose.connection;
 //___________________
 //Port
 //___________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
-
 //___________________
 //Database
 //___________________
@@ -43,14 +43,14 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-
 //___________________
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+
+// using controller file
+const booksController = require('./controller/books.js');
+app.use('/books', booksController);
 
 //___________________
 //Listener
