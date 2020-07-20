@@ -4,7 +4,7 @@ This is my second project which generates a list of books you want to read. Once
 
 # Live Website 
 
-https://git.heroku.com/book-app7863.git
+https://book-app7863.herokuapp.com/
 
 # Tech. Used 
 
